@@ -1,0 +1,25 @@
+{
+  "name": "MyShop.Customers",
+  "settings": {
+    "apiPrefix": "customers",
+    "databaseSchema": "customers",
+    "ApiControllersFolder": "Api/Controllers",
+    "ApiControllersNamespace": "Api.Controllers",
+    "DomainModelFolder": "MyShop.Customers/Domain/Model",
+    "QueriesFolder": "MyShop.Customers/Queries",
+    "DataAccessEfFolder": "MyShop.Customers/DataAccess.Ef"
+  },
+  "model": {
+    "Customer": {
+      "properties": {
+        "Guid": "Guid",
+        "Name": {
+          "typeName": "string",
+          "size": 200
+        },
+        "Active": "bool",
+        "UserId": "string"
+      }
+    }
+  }
+}

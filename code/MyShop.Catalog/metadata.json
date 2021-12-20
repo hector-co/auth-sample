@@ -1,0 +1,67 @@
+{
+  "name": "MyShop.Catalog",
+  "settings": {
+    "apiPrefix": "catalog",
+    "databaseSchema": "catalog",
+    "ApiControllersFolder": "Api/Controllers",
+    "ApiControllersNamespace": "Api.Controllers",
+    "DomainModelFolder": "MyShop.Catalog/Domain/Model",
+    "QueriesFolder": "MyShop.Catalog/Queries",
+    "DataAccessEfFolder": "MyShop.Catalog/DataAccess.Ef"
+  },
+  "model": {
+    "Category": {
+      "properties": {
+        "SubCategories": {
+          "typeName": "List<Category>",
+          "required": false
+        },
+        "Name": {
+          "typeName": "string",
+          "size": 100,
+          "required": true
+        },
+        "Description": {
+          "typeName": "string",
+          "size": 8000
+        },
+        "Image": {
+          "typeName": "string",
+          "size": 256
+        },
+        "DisplayOrder": "int",
+        "PublishedProductsCount": "int",
+        "Active": "bool"
+      }
+    },
+    "Product": {
+      "properties": {
+        "Guid": "Guid",
+        "SubCategory": {
+          "typeName": "Category"
+        },
+        "Name": {
+          "typeName": "string",
+          "size": 200,
+          "required": true
+        },
+        "Description": {
+          "typeName": "string",
+          "size": 8000,
+          "sort": false
+        },
+        "Images": {
+          "typeName": "List<string>",
+          "sort": false
+        },
+        "Price": "float",
+        "Stock": {
+          "typeName": "float?"
+        },
+        "Published": "bool",
+        "RegistrationDate": "DateTimeOffset",
+        "Active": "bool"
+      }
+    }
+  }
+}

@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "efcdb487-0de9-44bf-ad5e-9c1e53f460bc",
+		"name": "test-auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5067/catalog/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"catalog",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subCategoryId\": 2,\r\n    \"name\": \"test product1\",\r\n    \"description\": \"\",\r\n    \"images\": [\"no-image\"],\r\n    \"price\": 20,\r\n    \"stock\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5067/catalog/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"catalog",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5067/catalog/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"catalog",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5068/customers/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5068",
+					"path": [
+						"customers",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5068/customers/customers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5068",
+					"path": [
+						"customers",
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "web-spa",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.0.100:5090/auth/realms/TestRealm/protocol/openid-connect/logout",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"100"
+					],
+					"port": "5090",
+					"path": [
+						"auth",
+						"realms",
+						"TestRealm",
+						"protocol",
+						"openid-connect",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "scope",
+				"value": "openid",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "useBrowser",
+				"value": true,
+				"type": "boolean"
+			},
+			{
+				"key": "grant_type",
+				"value": "authorization_code",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "web-spa",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "http://192.168.0.100:5090/auth/realms/TestRealm/protocol/openid-connect/auth",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "http://192.168.0.100:5090/auth/realms/TestRealm/protocol/openid-connect/token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
